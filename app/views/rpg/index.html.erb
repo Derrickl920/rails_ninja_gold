@@ -1,0 +1,64 @@
+<style type="text/css">
+
+.gold{
+	border: 1px solid black;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin: 30px;
+	display: inline-block;
+}
+.activity {
+    height:100px;
+    width:900px;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 82%;
+    overflow:scroll;
+        }
+
+</style>
+<p>Your Gold: </p>
+<input type='text' value='<%= @gold %>'>
+
+<div class='gold'>
+	<h1>Farm</h1>
+	<p>(earns 10-20 gold)</p>
+	<form action='/rpg/farm' method='post'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type='submit' value='Find Gold!'>
+	</form>
+</div>
+
+<div class='gold'>
+	<h1>Cave</h1>
+	<p>(earns 5-10 gold)</p>
+	<form action='/rpg/cave' method='post'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type='submit' value='Find Gold!'>
+	</form>
+</div>
+
+<div class='gold'>
+	<h1>House</h1>
+	<p>(earns 2-5 gold)</p>
+	<form action='/rpg/house' method='post'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type='submit' value='Find Gold!'>
+	</form>
+</div>
+
+<div class='gold'>
+	<h1>Casino</h1>
+	<p>(Earns/Takes 0-50 gold</p>
+	<form action='/rpg/casino' method='post'>
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type='submit' value='Find Gold!'>
+	</form>
+</div>
+
+<form action='/rpg/reset' method='post'>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<input type='submit' value='reset'>
+</form>
+
+<textarea class='activity'></textarea>
